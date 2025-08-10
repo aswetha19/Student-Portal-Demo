@@ -3,89 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Random Quote Generator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #f4f4f9;
-      color: #333;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    header h1 {
-      font-size: 2.5rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
-      color: #2c3e50;
-    }
-    header p {
-      font-style: italic;
-      color: #7f8c8d;
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h2 {
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
-      color: #2980b9;
-    }
-    ul.skills {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-    footer {
+      padding: 20px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #95a5a6;
-      border-top: 1px solid #ddd;
-      padding-top: 15px;
     }
-    a {
-      color: #2980b9;
-      text-decoration: none;
+    #quote-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    a:hover {
-      text-decoration: underline;
+    button {
+      background: #ff5f6d;
+      background: linear-gradient(45deg, #ff5f6d, #ffc371);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(255, 95, 109, 0.4);
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(45deg, #ffc371, #ff5f6d);
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Aswetha PSL</h1>
-    <p>Web Developer & Designer</p>
-  </header>
+  <div id="quote-box">Click the button to get inspired!</div>
+  <button onclick="generateQuote()">New Quote</button>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Hello! I’m Aswetha, passionate about creating beautiful and functional websites. I enjoy turning ideas into reality with clean code and creative design.</p>
-  </section>
+  <script>
+    const quotes = [
+      "The best way to get started is to quit talking and begin doing. – Walt Disney",
+      "Don’t let yesterday take up too much of today. – Will Rogers",
+      "It's not whether you get knocked down, it's whether you get up. – Vince Lombardi",
+      "If you are working on something exciting, it will keep you motivated. – Unknown",
+      "Success is not in what you have, but who you are. – Bo Bennett",
+      "The harder you work for something, the greater you’ll feel when you achieve it.",
+      "Dream bigger. Do bigger.",
+      "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+      "Great things never come from comfort zones.",
+      "Push yourself, because no one else is going to do it for you."
+    ];
 
-  <section>
-    <h2>Skills</h2>
-    <ul class="skills">
-      <li>HTML5 & CSS3</li>
-      <li>JavaScript (ES6+)</li>
-      <li>Responsive Design</li>
-      <li>Basic Python & Flask</li>
-      <li>Version Control with Git</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:aswetha@example.com">aswetha@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/aswetha" target="_blank">linkedin.com/in/aswetha</a></p>
-  </section>
-
-  <footer>
-    &copy; 2025 Aswetha PSL. All rights reserved.
-  </footer>
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote-box').textContent = quotes[randomIndex];
+    }
+  </script>
 
 </body>
 </html>
