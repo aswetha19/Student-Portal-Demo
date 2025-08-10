@@ -1,0 +1,7 @@
+name   :P.S.L Aswetha
+course :Data Science 
+Year   :3rd Bsc 
+SUC    :2360530040
+Rollno :06
+College:Aditya Women's Degree College
+Branch : Ram Nagar
